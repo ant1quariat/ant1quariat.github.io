@@ -6,10 +6,6 @@
 	<title>Ant1quariat Developers </title>
 
 	<link rel="stylesheet" href="assets/css/main.css"/>
-	<link rel="stylesheet" href="assets/css/_header-module.css">
-	<link rel="stylesheet" href="assets/css/_content-module.css">
-	<link rel="stylesheet" href="assets/css/_footer-module.css">
-
 </head>
 <body class="__gl_scroll-hidden __gl_scroll">
 	<div class="wrapper">
@@ -43,13 +39,110 @@
 		<footer class="footer__wrapper">
 			<section class="__footer_content">
 				<span class="__footer_text-logo">
-					(C) 2022 <a class="__footer_link" href="#">Antiquariat Developers Team</a>
+					(C) 2022 <a class="__footer_link" href="https://vk.com/a.devtm">Antiquariat Developers Team</a>
 				</span>
 			</section>
 		</footer>
 	</div>
+	<script>
+		const changeLang = document.querySelector('#toggle-lang');
+		const allLang = ['ru', 'en'];
+		const langArr = {
+		        "lng-home" : 
+		            {
+		                "ru": "Главная",
+		                "en": "Home"
+		            },
+		        "lng-about" : 
+		            {
+		                "ru": "О нас",
+		                "en": "About Us"
+		            },
+		        "lng-project" : 
+		            {
+		                "ru": "Проекты",
+		                "en": "Projects"
+		            },
+		        "lng-more" : 
+		            {
+		                "ru": "Другое",
+		                "en": "More"
+		            },
+		        "lng-theme" : 
+		            {
+		                "ru": "Смена темы",
+		                "en": "Change theme"
+		            },
+		        "lng-lang" : 
+		            {
+		                "ru": "Сменить язык",
+		                "en": "Change lang"
+		            },
+		        "lng-title" : 
+		            {
+		                "ru": "Привет интернет!",
+		                "en": "Hi world!"
+		            },
+		        "lng-welcome" : 
+		            {
+		                "ru": "Добро пожаловать на демонстрационный сайт!",
+		                "en": "Welcome to demonstration site"
+		            }
+		    }
+
+
+		changeLang.addEventListener('change', changeURLLanguage);
+
+		function changeURLLanguage()
+		    {
+		        if (localStorage.getItem("lang") == "en")
+		            {
+		                localStorage.setItem("lang", "ru");
+		                
+		                let lang = "ru";
+
+		                location.href = window.location.pathname + '#' + lang;
+		        
+		                location.reload();
+		            }
+		        else
+		            {
+		                localStorage.setItem("lang", "en");
+
+		                let lang = "en";
+
+		                location.href = window.location.pathname + '#' + lang;
+		        
+		                location.reload();
+		            }
+		    }
+
+
+		function changeLanguage()
+		    {
+		        let hash = window.location.hash;
+		        hash = hash.substr(1);
+
+		        if (!allLang.includes(hash))
+		            {
+		                location.href = window.location.pathname + '#ru';
+		                location.reload();
+		            }
+		        changeLang.value = hash;
+
+		        document.querySelector('.lng-home').innerHTML = langArr['lng-home'][hash];
+		        document.querySelector('.lng-about').innerHTML = langArr['lng-about'][hash];
+		        document.querySelector('.lng-project').innerHTML = langArr['lng-project'][hash];
+		        document.querySelector('.lng-more').innerHTML = langArr['lng-more'][hash];
+		       
+		        document.querySelector('.lng-title').innerHTML = langArr['lng-title'][hash];
+		        document.querySelector('.lng-welcome').innerHTML = langArr['lng-welcome'][hash];
+		        
+		        document.querySelector('.lng-theme').innerHTML = langArr['lng-theme'][hash];
+		    }
+		changeLanguage()
+	</script>
 	<script src="assets/js/script.js"></script>
-	<script src="assets/js/__gl_lang.js"></script>
 </body>
 <style>
 	.content__wrapper
@@ -57,225 +150,225 @@
 		height: 86vh;
 
 	}
-.__content_block 
-	{
-		display: flex;
-		flex-direction: column;
+	.__content_block 
+		{
+			display: flex;
+			flex-direction: column;
 
-		align-items: center;
+			align-items: center;
 
-		padding: 1px 30px;
+			padding: 1px 30px;
 
-		overflow-y: auto;
+			overflow-y: auto;
 
-	}
-.__content_title 
-	{
-		font-size: 24px;
-	}
-.__content_text 
-	{
-		font-size: 18px;
-		font-weight: 300;
+		}
+	.__content_title 
+		{
+			font-size: 24px;
+		}
+	.__content_text 
+		{
+			font-size: 18px;
+			font-weight: 300;
 
-        line-height: 1.3em;
+	        line-height: 1.3em;
 
-		margin: 10px 0;
-	}
-.__content_text::before
-	{
-		content: "";
-		margin-right: 15px;
-	}
-:root
-	{
-		--ui-footer-link: black;
-		--ui-footer-border: red;
-	}
-.__footer_content
-	{
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-	}
-.__footer_link
-	{
-		color: var(--ui-footer-link);
+			margin: 10px 0;
+		}
+	.__content_text::before
+		{
+			content: "";
+			margin-right: 15px;
+		}
+	:root
+		{
+			--ui-footer-link: black;
+			--ui-footer-border: red;
+		}
+	.__footer_content
+		{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+	.__footer_link
+		{
+			color: var(--ui-footer-link);
 
-		text-decoration: unset;
-	}
-.__footer_link:hover
-	{
-		border-bottom: 1px solid var(--ui-footer-border);
-	}
-html:root
-	{
-		--ui-header-color: darkred;
-		--ui-link-border: black;
-		--ui-link-color: black;
-		--ui-btn-hover: #BD130DFF;
-		--ui-btn-bg: #BF3F55FF;
-	}
-.__header_content
-	{
-		display: flex;
-		flex-direction: row;
+			text-decoration: unset;
+		}
+	.__footer_link:hover
+		{
+			border-bottom: 1px solid var(--ui-footer-border);
+		}
+	html:root
+		{
+			--ui-header-color: darkred;
+			--ui-link-border: black;
+			--ui-link-color: black;
+			--ui-btn-hover: #BD130DFF;
+			--ui-btn-bg: #BF3F55FF;
+		}
+	.__header_content
+		{
+			display: flex;
+			flex-direction: row;
 
-		align-items: center;
-		justify-content: space-between;
+			align-items: center;
+			justify-content: space-between;
 
-		padding: 15px 20px;
-	}
-.__header_content-logo
-	{
-		font-size: 22px;
+			padding: 15px 20px;
+		}
+	.__header_content-logo
+		{
+			font-size: 22px;
 
-	}
-.__header_logo-text
-	{
-		color: var(--ui-header-color);
-	}
-.__header_content-menu
-	{
-		display: flex;
-		flex-direction: row;
+		}
+	.__header_logo-text
+		{
+			color: var(--ui-header-color);
+		}
+	.__header_content-menu
+		{
+			display: flex;
+			flex-direction: row;
 
-		align-items: center;
-		gap: 15px;
-	}
-.__header_menu_buttons
-	{
-		display: flex;
-		flex-direction: row;
+			align-items: center;
+			gap: 15px;
+		}
+	.__header_menu_buttons
+		{
+			display: flex;
+			flex-direction: row;
 
-		align-items: center;
-	}
-.__header_menu_href
-	{
-		display: flex;
-		flex-direction: row;
+			align-items: center;
+		}
+	.__header_menu_href
+		{
+			display: flex;
+			flex-direction: row;
 
-		align-items: center;
-	}
-.__header_menu_link
-	{
-		text-decoration: unset;
+			align-items: center;
+		}
+	.__header_menu_link
+		{
+			text-decoration: unset;
 
-		color: var(--ui-link-color);
+			color: var(--ui-link-color);
 
-		border: 1px solid var(--ui-link-border);
-		padding: 5px;
+			border: 1px solid var(--ui-link-border);
+			padding: 5px;
 
-		background-color: var(--ui-btn-bg);
-	}
-.__header_menu_link[type=button]
-	{
-		padding: 6.5px 5px;
-	}
-.__header_menu_link:hover
-	{
-		border: 1px solid var(--ui-link-border);
-		background-color: var(--ui-btn-hover);
-	}
-:root
-	{
-		--ui-main-color: 350;
-		--ui-menu-bg: hsl(var(--ui-main-color) , 50%, 50%);
-		--ui-menu-text: hsl(var(--ui-main-color), 50%, 10%);
-		--ui-main-bg: hsl(var(--ui-main-color) , 50%, 95%);
-		--ui-main-text: hsl(var(--ui-main-color) , 50%, 50%);
-		--ui-main-title: hsl(var(--ui-main-color) , 50%, 20%);
-		--ui-footer-bg: hsl(var(--ui-main-color) , 93%, 88%);
-		--ui-btn-color: hsl(var(--ui-main-color), 50%, 20%);
-	}
-:root[theme='dark']
-	{
-		--ui-menu-bg: hsl(var(--ui-main-color) , 50%, 90%);
-		--ui-menu-text: hsl(var(--ui-main-color), 50%, 10%);
-		--ui-main-bg: hsl(var(--ui-main-color) , 50%, 95%);
-		--ui-main-text: hsl(var(--ui-main-color) , 50%, 50%);
-		--ui-main-title: hsl(var(--ui-main-color) , 50%, 20%);
-		--ui-footer-bg: hsl(var(--ui-main-color) , 93%, 88%);
-		--ui-btn-color: hsl(var(--ui-main-color), 50%, 20%);
-		filter: invert(1) brightness(0.6);
-	}
-html:root[theme='dark'] img
-	{
-		filter: invert(1) brightness(1) !important;
-	}
-img
-	{
-		width: 400px;
-		height: 400px;
-	}
-*,
-*::before,
-*::after
-	{
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-html
-	{
-		height: 100%;
-	}
-body
-	{
-		height: 100%;
-		font-family: -apple-system, BlinkMacSystemFont"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-		"Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif;  
-		display: flex;
-		flex-direction: column;
-	}
-.header__wrapper
-	{
-		height: 65px;
+			background-color: var(--ui-btn-bg);
+		}
+	.__header_menu_link[type=button]
+		{
+			padding: 6.5px 5px;
+		}
+	.__header_menu_link:hover
+		{
+			border: 1px solid var(--ui-link-border);
+			background-color: var(--ui-btn-hover);
+		}
+	:root
+		{
+			--ui-main-color: 350;
+			--ui-menu-bg: hsl(var(--ui-main-color) , 50%, 50%);
+			--ui-menu-text: hsl(var(--ui-main-color), 50%, 10%);
+			--ui-main-bg: hsl(var(--ui-main-color) , 50%, 95%);
+			--ui-main-text: hsl(var(--ui-main-color) , 50%, 50%);
+			--ui-main-title: hsl(var(--ui-main-color) , 50%, 20%);
+			--ui-footer-bg: hsl(var(--ui-main-color) , 93%, 88%);
+			--ui-btn-color: hsl(var(--ui-main-color), 50%, 20%);
+		}
+	:root[theme='dark']
+		{
+			--ui-menu-bg: hsl(var(--ui-main-color) , 50%, 90%);
+			--ui-menu-text: hsl(var(--ui-main-color), 50%, 10%);
+			--ui-main-bg: hsl(var(--ui-main-color) , 50%, 95%);
+			--ui-main-text: hsl(var(--ui-main-color) , 50%, 50%);
+			--ui-main-title: hsl(var(--ui-main-color) , 50%, 20%);
+			--ui-footer-bg: hsl(var(--ui-main-color) , 93%, 88%);
+			--ui-btn-color: hsl(var(--ui-main-color), 50%, 20%);
+			filter: invert(1) brightness(0.6);
+		}
+	html:root[theme='dark'] img
+		{
+			filter: invert(1) brightness(1) !important;
+		}
+	img
+		{
+			width: 400px;
+			height: 400px;
+		}
+	*,
+	*::before,
+	*::after
+		{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+	html
+		{
+			height: 100%;
+		}
+	body
+		{
+			height: 100%;
+			font-family: -apple-system, BlinkMacSystemFont"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+			"Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif;  
+			display: flex;
+			flex-direction: column;
+		}
+	.header__wrapper
+		{
+			height: 65px;
 
-		color: var(--ui-menu-color);
-		background: var(--ui-menu-bg);
-	}
-.content__wrapper
-	{
-		display: flex;
-		flex-direction: column;
+			color: var(--ui-menu-color);
+			background: var(--ui-menu-bg);
+		}
+	.content__wrapper
+		{
+			display: flex;
+			flex-direction: column;
 
-		height: 87vh;
+			height: 87vh;
 
-		background: var(--ui-main-bg);
-	}
-.footer__wrapper
-	{
-		padding-top: 20px;
+			background: var(--ui-main-bg);
+		}
+	.footer__wrapper
+		{
+			padding-top: 20px;
 
-		height: 65px;
+			height: 65px;
 
-		background: var(--ui-footer-bg);
-	}
+			background: var(--ui-footer-bg);
+		}
 
-.__gl_scroll-hidden
-	{
-		overflow: hidden !important;
-		-ms-overflow-style: none !important;
-		scrollbar-width: none !important;
-	}
-.__gl_scroll::-webkit-scrollbar 
-	{
-		width: 8px;
-	}
-.__gl_scroll::-webkit-scrollbar-track 
-	{
-		background: var(--ui-menu-bg);
+	.__gl_scroll-hidden
+		{
+			overflow: hidden !important;
+			-ms-overflow-style: none !important;
+			scrollbar-width: none !important;
+		}
+	.__gl_scroll::-webkit-scrollbar 
+		{
+			width: 8px;
+		}
+	.__gl_scroll::-webkit-scrollbar-track 
+		{
+			background: var(--ui-menu-bg);
 
-		border-radius: 20px;
-	}
-.__gl_scroll::-webkit-scrollbar-thumb
-	{
-		background-color: var(--ui-footer-bg);
-		border-radius: 20px;
-		border: 1px solid var(--ui-menu-text);
-	}
+			border-radius: 20px;
+		}
+	.__gl_scroll::-webkit-scrollbar-thumb
+		{
+			background-color: var(--ui-footer-bg);
+			border-radius: 20px;
+			border: 1px solid var(--ui-menu-text);
+		}
 </style>
 </html>
     	
