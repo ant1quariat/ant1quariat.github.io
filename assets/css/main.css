@@ -1,0 +1,98 @@
+:root
+	{
+		--ui-main-color: 350;
+		--ui-menu-bg: hsl(var(--ui-main-color) , 50%, 50%);
+		--ui-menu-text: hsl(var(--ui-main-color), 50%, 10%);
+		--ui-main-bg: hsl(var(--ui-main-color) , 50%, 95%);
+		--ui-main-text: hsl(var(--ui-main-color) , 50%, 50%);
+		--ui-main-title: hsl(var(--ui-main-color) , 50%, 20%);
+		--ui-footer-bg: hsl(var(--ui-main-color) , 93%, 88%);
+		--ui-btn-color: hsl(var(--ui-main-color), 50%, 20%);
+	}
+:root[theme='dark']
+	{
+		--ui-menu-bg: hsl(var(--ui-main-color) , 50%, 90%);
+		--ui-menu-text: hsl(var(--ui-main-color), 50%, 10%);
+		--ui-main-bg: hsl(var(--ui-main-color) , 50%, 95%);
+		--ui-main-text: hsl(var(--ui-main-color) , 50%, 50%);
+		--ui-main-title: hsl(var(--ui-main-color) , 50%, 20%);
+		--ui-footer-bg: hsl(var(--ui-main-color) , 93%, 88%);
+		--ui-btn-color: hsl(var(--ui-main-color), 50%, 20%);
+		filter: invert(1) brightness(0.6);
+	}
+html:root[theme='dark'] img
+	{
+		filter: invert(1) brightness(1) !important;
+	}
+img
+	{
+		width: 400px;
+		height: 400px;
+	}
+*,
+*::before,
+*::after
+	{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+html
+	{
+		height: 100%;
+	}
+body
+	{
+		height: 100%;
+		font-family: -apple-system, BlinkMacSystemFont"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+		"Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif;  
+		display: flex;
+		flex-direction: column;
+	}
+.header__wrapper
+	{
+		height: 65px;
+
+		color: var(--ui-menu-color);
+		background: var(--ui-menu-bg);
+	}
+.content__wrapper
+	{
+		display: flex;
+		flex-direction: column;
+
+		height: 87vh;
+
+		background: var(--ui-main-bg);
+	}
+.footer__wrapper
+	{
+		padding-top: 20px;
+
+		height: 65px;
+
+		background: var(--ui-footer-bg);
+	}
+
+.__gl_scroll-hidden
+	{
+		overflow: hidden !important;
+		-ms-overflow-style: none !important;
+		scrollbar-width: none !important;
+	}
+.__gl_scroll::-webkit-scrollbar 
+	{
+		width: 8px;
+	}
+.__gl_scroll::-webkit-scrollbar-track 
+	{
+		background: var(--ui-menu-bg);
+
+		border-radius: 20px;
+	}
+.__gl_scroll::-webkit-scrollbar-thumb
+	{
+		background-color: var(--ui-footer-bg);
+		border-radius: 20px;
+		border: 1px solid var(--ui-menu-text);
+	}

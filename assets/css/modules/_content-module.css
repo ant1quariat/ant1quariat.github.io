@@ -1,0 +1,35 @@
+.content__wrapper
+	{
+		height: 86vh;
+
+	}
+.__content_block 
+	{
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+
+		padding: 1px 30px;
+
+		overflow-y: auto;
+
+	}
+.__content_title 
+	{
+		font-size: 24px;
+	}
+.__content_text 
+	{
+		font-size: 18px;
+		font-weight: 300;
+
+        line-height: 1.3em;
+
+		margin: 10px 0;
+	}
+.__content_text::before
+	{
+		content: "";
+		margin-right: 15px;
+	}
