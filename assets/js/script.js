@@ -16,3 +16,12 @@ toggleBtn.addEventListener('click', (e) => {
         localStorage.setItem('theme', 'dark');
     }
 });
+
+function menuAdp() 
+    {
+        const links = document.getElementById('menu-href');
+        const btns = document.getElementById('menu-button');
+
+        links.classList.toggle('__gl_none');
+        btns.classList.toggle('__gl_none');
+    }

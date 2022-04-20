@@ -6,6 +6,7 @@
 	<title>Ant1quariat Developers </title>
 
 	<link rel="stylesheet" href="assets/css/main.css"/>
+	<link rel="stylesheet" href="assets/css/adp.css">
 </head>
 <body class="__gl_scroll-hidden __gl_scroll">
 	<div class="wrapper">
@@ -17,13 +18,14 @@
 					</h3>					
 				</section>
 				<section class="__header_content-menu">
-					<div class="__header_menu_href">
+					<a class="__header_menu-open" onclick="menuAdp();">MENU</a>
+					<div class="__header_menu_href __gl_none" id="menu-href">
 						<a class="__header_menu_link lng-home" href="#">Home</a>
 						<a class="__header_menu_link lng-about" href="#">About Us</a>
 						<a class="__header_menu_link lng-project" href="#">Projects</a>
 						<a class="__header_menu_link lng-more" href="#">More</a>
 					</div>
-					<div class="__header_menu_buttons">
+					<div class="__header_menu_buttons __gl_none" id="menu-button">
 						<button class="__header_menu_link lng-theme" type="button"id="toggle-theme">Смена темы</button>
 						<input class="__header_menu_link lng-lang" type="button" value="ru" onclick="changeURLLanguage();" id="toggle-lang" />
 					</div>
@@ -34,6 +36,21 @@
 			<div class="__content_block __gl_scroll">
 				<h2 class="__content_title lng-title">Hi world!</h2>
 				<p class="__content_text lng-welcome">Добро пожаловать на демонстрационный сайт!</p>
+				<p class="__content_text">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, neque quas inventore ullam debitis minus in porro quaerat vero qui architecto distinctio iure consequuntur temporibus earum eum expedita officia quod repellendus dolorem nemo tempora, autem, adipisci! At quisquam reiciendis fugiat molestiae. Deleniti dolore dolor a, ut similique quia aliquid? Consequuntur incidunt voluptatem officia, veritatis neque? Perspiciatis enim fugit earum molestias animi, sed iste amet excepturi necessitatibus, illo vero vel aliquid veritatis sequi est reiciendis praesentium. Hic assumenda officiis ducimus, asperiores nam deleniti? Quas ut doloremque voluptatum, magni accusantium ea inventore possimus labore, nisi numquam provident adipisci dolorem tempora quibusdam tempore.
+				</p>
+				<p class="__content_text">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, neque quas inventore ullam debitis minus in porro quaerat vero qui architecto distinctio iure consequuntur temporibus earum eum expedita officia quod repellendus dolorem nemo tempora, autem, adipisci! At quisquam reiciendis fugiat molestiae. Deleniti dolore dolor a, ut similique quia aliquid? Consequuntur incidunt voluptatem officia, veritatis neque? Perspiciatis enim fugit earum molestias animi, sed iste amet excepturi necessitatibus, illo vero vel aliquid veritatis sequi est reiciendis praesentium. Hic assumenda officiis ducimus, asperiores nam deleniti? Quas ut doloremque voluptatum, magni accusantium ea inventore possimus labore, nisi numquam provident adipisci dolorem tempora quibusdam tempore.
+				</p>
+				<p class="__content_text">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, neque quas inventore ullam debitis minus in porro quaerat vero qui architecto distinctio iure consequuntur temporibus earum eum expedita officia quod repellendus dolorem nemo tempora, autem, adipisci! At quisquam reiciendis fugiat molestiae. Deleniti dolore dolor a, ut similique quia aliquid? Consequuntur incidunt voluptatem officia, veritatis neque? Perspiciatis enim fugit earum molestias animi, sed iste amet excepturi necessitatibus, illo vero vel aliquid veritatis sequi est reiciendis praesentium. Hic assumenda officiis ducimus, asperiores nam deleniti? Quas ut doloremque voluptatum, magni accusantium ea inventore possimus labore, nisi numquam provident adipisci dolorem tempora quibusdam tempore.
+				</p>
+				<p class="__content_text">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, neque quas inventore ullam debitis minus in porro quaerat vero qui architecto distinctio iure consequuntur temporibus earum eum expedita officia quod repellendus dolorem nemo tempora, autem, adipisci! At quisquam reiciendis fugiat molestiae. Deleniti dolore dolor a, ut similique quia aliquid? Consequuntur incidunt voluptatem officia, veritatis neque? Perspiciatis enim fugit earum molestias animi, sed iste amet excepturi necessitatibus, illo vero vel aliquid veritatis sequi est reiciendis praesentium. Hic assumenda officiis ducimus, asperiores nam deleniti? Quas ut doloremque voluptatum, magni accusantium ea inventore possimus labore, nisi numquam provident adipisci dolorem tempora quibusdam tempore.
+				</p>
+				<p class="__content_text">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, neque quas inventore ullam debitis minus in porro quaerat vero qui architecto distinctio iure consequuntur temporibus earum eum expedita officia quod repellendus dolorem nemo tempora, autem, adipisci! At quisquam reiciendis fugiat molestiae. Deleniti dolore dolor a, ut similique quia aliquid? Consequuntur incidunt voluptatem officia, veritatis neque? Perspiciatis enim fugit earum molestias animi, sed iste amet excepturi necessitatibus, illo vero vel aliquid veritatis sequi est reiciendis praesentium. Hic assumenda officiis ducimus, asperiores nam deleniti? Quas ut doloremque voluptatum, magni accusantium ea inventore possimus labore, nisi numquam provident adipisci dolorem tempora quibusdam tempore.
+				</p>
 			</div>
 		</main>
 		<footer class="footer__wrapper">
@@ -145,6 +162,10 @@
 	<script src="assets/js/script.js"></script>
 </body>
 <style>
+	.__header_menu-open
+		{
+			display: none;
+		}
 	.content__wrapper
 	{
 		height: 86vh;
